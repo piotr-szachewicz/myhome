@@ -1,31 +1,19 @@
-<h1>Listing bookmarks</h1>
+<h1>Your bookmarks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% @bookmarks.each do |bookmark| %>
+    <div class="bookmark">
+      <div class="small_buttons">
+        <%= link_to 'Edit', edit_bookmark_path(bookmark) %>
+        <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
 
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.name %></td>
-        <td><%= bookmark.description %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <a href="<%= bookmark.url %>" class="bookmark_link" target="_blank">
+          <img src="http://placehold.it/150x150&text=Hello world" alt="<%= bookmark.description %>"/>
+          <%= bookmark.name %>
+      </a>
+    </div>
+      
+  <% end %>
 <br>
 
 <%= link_to 'New Bookmark', new_bookmark_path %>
