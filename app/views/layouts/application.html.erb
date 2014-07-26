@@ -12,29 +12,34 @@
 </head>
 <body>
 
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
           <%= link_to "MyHome Bookmarks", root_path, id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <% if user_signed_in? %>
-                <li>Current user: <%= current_user.email %></li>
-                <li><%= link_to "Sign out", destroy_user_session_path %></li>
-              <% else %>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
-              <% end %>
-            </ul>
-          </nav>
         </div>
-      </div>
-    </header>
 
-<!--  <div class="container">
-    <div class="alert alert-success" role="alert"><%= notice %></div>
-    <div class="alert alert-info" role="alert"><%= alert %></div>
-  </div>-->
+        <div class="collapse navbar-collapse pull-right">
+          <% if user_signed_in? %>
+            <p class="navbar-text">Signed in as <%= current_user.email %></p>
+          <% end %>
+
+          <ul class="nav navbar-nav">
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign out", destroy_user_session_path %></li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+  <div class="container">
+    <% if notice %><div class="alert alert-success" role="alert"><%= notice %></div><% end %>
+    <% if alert %><div class="alert alert-danger" role="alert"><%= alert %></div><% end %>
+  </div>
   
   <div class="container">
     <%= yield %>
