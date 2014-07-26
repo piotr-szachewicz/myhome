@@ -1,4 +1,6 @@
 Myhome::Application.routes.draw do
+  resources :bookmarks
+
   devise_for :users
 
   #devise_scope :user do
