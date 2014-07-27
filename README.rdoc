@@ -1,8 +1,8 @@
 == README
 
-<b>Welcome to MyHome Bookmarks!
+<b>Welcome to MyHome Bookmarks!</b>
 
-A great web application for managing bookmarks! :)</b>
+<b>A great web application for managing bookmarks! :)</b>
  
 Are you tired of using the brower built-in bookmarks?
 Do you want to use your bookmarks on different computers and different browsers?
