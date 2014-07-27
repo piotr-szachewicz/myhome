@@ -24,12 +24,6 @@ describe BookmarksController do
   # Bookmark. As you add validations to Bookmark, be sure to
   # adjust the attributes here as well.
 
-  def login_user
-    @request.env["devise.mapping"] = Devise.mappings[:user]
-    @user = FactoryGirl.create(:user)
-    sign_in @user
-  end
-
   def create_bookmark
     FactoryGirl.create(:bookmark, user: @user)
   end
