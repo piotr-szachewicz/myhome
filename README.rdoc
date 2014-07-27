@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<b>Welcome to MyHome Bookmarks!
 
-Things you may want to cover:
+A great web application for managing bookmarks! :)</b>
+ 
+Are you tired of using the brower built-in bookmarks?
+Do you want to use your bookmarks on different computers and different browsers?
 
-* Ruby version
+<b>This application is just for you!</b>
 
-* System dependencies
+Sign up, define your bookmarks, set this page as your home page and use them wherever you need!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This repository contains a Ruby on Rails project used to store user bookmarks online.
