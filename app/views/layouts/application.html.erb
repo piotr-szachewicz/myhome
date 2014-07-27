@@ -18,7 +18,7 @@
           <%= link_to "MyHome Bookmarks", root_path, id: "logo" %>
         </div>
 
-        <div class="collapse navbar-collapse pull-right">
+        <div class="collapse navbar-collapse navbar-right">
           <% if user_signed_in? %>
             <p class="navbar-text">Signed in as <%= current_user.email %></p>
           <% end %>

@@ -5,14 +5,25 @@
     <div class="col-sm-3 col-xs-6">
       <div class="thumbnail bookmark">
         <div class="small_buttons">
-          <%= link_to 'Edit', edit_bookmark_path(bookmark) %>
-          <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to edit_bookmark_path(bookmark), class: "btn btn-default btn-xs" do %>
+             <span class="glyphicon glyphicon-pencil"></span> Edit
+          <% end %>
+
+          <%= link_to bookmark, class: "btn btn-default btn-xs", method: :delete, data: { confirm: 'Do you really want to delete this bookmark?' } do %>
+             <span class="glyphicon glyphicon-trash"></span> Delete 
+          <% end %>
+
         </div>
 
-        <a href="<%= bookmark.url %>" class="bookmark_link" target="_blank">
+        <%= link_to  bookmark.url, target: "_blank", class: "btn btn-lg btn-block btn-info" do %>
+          <span class="glyphicon glyphicon-globe"></span> <%=bookmark.name%>
+        <% end %>
+
+<!--        <a href="<%= bookmark.url %>" class="bookmark_link" target="_blank">
           <img src="http://placehold.it/150x150&text=Hello world" alt="<%= bookmark.description %>"/>
           <%= bookmark.name %>
         </a>
+-->
       </div>
     </div>
       
@@ -22,4 +33,6 @@
 
 <br>
 
-<%= link_to 'Add New Bookmark', new_bookmark_path, class: "btn btn-primary" %>
+<%= link_to new_bookmark_path, class: "btn btn-primary" do %>
+  <span class="glyphicon glyphicon-plus"></span> Add New Bookmark 
+<% end %>
