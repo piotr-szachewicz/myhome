@@ -1,13 +1,15 @@
+
 class Bookmark < ActiveRecord::Base
-  VALID_URL_PATTERN = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z/
-  validates :url, presence: true,
-            format: { with: VALID_URL_PATTERN }
+  validates :url, presence: true, url: true
   validates :name, presence: true
   belongs_to :user
 
-  before_save {
-    if not self.url.start_with?("http://")
-      self.url = "http://" + self.url
+  def url=(value)
+    if not value.start_with?("http://")
+      value = "http://" + value
     end
-  }
+
+    write_attribute(:url, value)
+  end
+
 end
