@@ -1,6 +1,6 @@
 class Bookmark < ActiveRecord::Base
   validates :url, presence: true, url: true
-  validates :name, presence: true
+  validates :name, presence: true, length: {maximum: 25}
   belongs_to :user
   FAVICON_MINIMUM_SIZE = 1000
 

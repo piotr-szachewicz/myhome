@@ -39,5 +39,11 @@ describe Bookmark do
     end
   end
 
+  describe "when name is too long" do
+    it "should be invalid" do
+      @bookmark.name = "oroerokeorgkeorkgoerkgokerogkeorkgoerkgokerogkerokg"
+      expect(@bookmark).to_not be_valid
+    end 
+  end
 end
 
