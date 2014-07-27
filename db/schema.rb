@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726112016) do
+ActiveRecord::Schema.define(version: 20140727173837) do
 
   create_table "bookmarks", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140726112016) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "favicon_url"
   end
 
   create_table "users", force: true do |t|

@@ -2,9 +2,11 @@
 
 <div class="row">
   <% @bookmarks.each do |bookmark| %>
-    <div class="col-sm-3 col-xs-6">
+    <div class="col-sm-4 col-xs-6">
       <div class="thumbnail bookmark">
         <div class="small_buttons">
+
+
           <%= link_to edit_bookmark_path(bookmark), class: "btn btn-default btn-xs" do %>
              <span class="glyphicon glyphicon-pencil"></span> Edit
           <% end %>
@@ -15,15 +17,11 @@
 
         </div>
 
-        <%= link_to  bookmark.url, target: "_blank", class: "btn btn-lg btn-block btn-info" do %>
-          <span class="glyphicon glyphicon-globe"></span> <%=bookmark.name%>
+        <%= link_to  bookmark.url, target: "_blank", class: "bookmark_link btn btn-lg btn-block btn-default" do %>
+          <%=get_bookmark_icon(bookmark).html_safe %>
+          <%=bookmark.name%>
         <% end %>
 
-<!--        <a href="<%= bookmark.url %>" class="bookmark_link" target="_blank">
-          <img src="http://placehold.it/150x150&text=Hello world" alt="<%= bookmark.description %>"/>
-          <%= bookmark.name %>
-        </a>
--->
       </div>
     </div>
       
