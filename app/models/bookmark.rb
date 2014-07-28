@@ -5,7 +5,7 @@ class Bookmark < ActiveRecord::Base
   FAVICON_MINIMUM_SIZE = 1000
 
   def url=(value)
-    if not value.start_with?("http://")
+    if not value.start_with?("http")
       value = "http://" + value
     end
 
